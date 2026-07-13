@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FleetFix Command Center</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header><div><p class="eyebrow">FLEET OPERATIONS AI</p><h1>FleetFix <span>Command Center</span></h1><p class="lede">LangGraph diagnostics, evidence-based maintenance planning, and human-controlled work orders.</p></div><div id="runtime" class="runtime"><i></i> Checking runtime</div></header>
+      <section class="metrics"><article><small>Open cases</small><strong id="caseCount">0</strong></article><article><small>Approval gate</small><strong>Required</strong></article><article><small>Safety policy</small><strong>Fail closed</strong></article><article><small>Workflow</small><strong>5 agents</strong></article></section>
+      <section class="workspace">
+        <article class="panel"><p class="eyebrow">TELEMETRY INTAKE</p><h2>Open diagnostic case</h2><form id="caseForm"><div class="grid"><label>Vehicle ID<input id="vehicleId" value="TRK-4812" required /></label><label>Odometer (km)<input id="odometer" type="number" value="184200" required /></label><label>Engine temperature °C<input id="temperature" type="number" value="109" required /></label><label>DTC codes<input id="dtcs" value="P0217,P0128" required /></label></div><label>Reported symptom<textarea id="symptom" required>Coolant warning and intermittent power reduction during loaded ascent.</textarea></label><button id="submit" type="submit">Run FleetFix workflow <span>→</span></button></form></article>
+        <article class="panel outcome"><p class="eyebrow">CASE OUTCOME</p><div class="heading"><h2 id="caseTitle">Awaiting telemetry</h2><span id="status" class="badge">Ready</span></div><p id="recommendation">FleetFix will collect approved vehicle context, coordinate diagnostics and parts analysis, apply a deterministic safety policy, and return an approval-ready recommendation.</p><div id="risk"></div><button id="approve" hidden>Approve work order</button></article>
+      </section>
+      <section class="panel"><p class="eyebrow">MULTI-AGENT TRACE</p><h2>Evidence chain</h2><ol id="trace"><li class="empty">No workflow trace yet.</li></ol></section>
+    </main><script src="/static/app.js"></script>
+  </body>
+</html>
